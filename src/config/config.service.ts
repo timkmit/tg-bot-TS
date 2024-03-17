@@ -10,12 +10,21 @@ export class ConfigService implements IConfigService {
             throw new Error('Не найден файл .env!')
         }
         if(!parsed){
-            throw new Error('Не найден файл .env!')
+            throw new Error('Пустой .env!')
         }
+
+        this.config = parsed;
     }
 
     get(key: string): string {
-        throw new Error("Method not implemented")
+
+        const res = this.config[key];
+        if(!res) {
+            throw new Error('Нет такого ключа!')
+        }
+
+        throw new Error("Method not implemented: config.servise.ts")
+        return res;
     }
 
 }
