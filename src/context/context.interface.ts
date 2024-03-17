@@ -1,7 +1,7 @@
 import { Context } from "telegraf";
 
 export interface SessionData {
- choiceLike: boolean;
+ choiceButton: boolean;
 }
 
 export interface IBotContext extends Context {

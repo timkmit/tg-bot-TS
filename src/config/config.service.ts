@@ -23,7 +23,7 @@ export class ConfigService implements IConfigService {
             throw new Error('Нет такого ключа!')
         }
 
-        throw new Error("Method not implemented: config.servise.ts")
+        
         return res;
     }
 
