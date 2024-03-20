@@ -44,15 +44,33 @@ export class StartCommand extends Command {
 
         //});
 
+        this.bot.action("go_back", (ctx) => {
+            console.log("Пользователь вернулся назад");
+            ctx.reply("Выберите необходимое действие", Markup.inlineKeyboard(
+                [
+                    [
+                        Markup.button.callback("📝 Список товаров", "take_all_goods"),
+                        Markup.button.callback("📈 Выписка дохода", "take_extract"),
+                    ],
+                    [
+                        Markup.button.callback("✅ Добавить заказ", "add_order"),
+                        Markup.button.callback("❌ Оформить возврат", "add_refund")
+                    ],
+                    [
+                        Markup.button.callback("📜 Выбрать товар", "take_good"),
+                        Markup.button.callback("📔 Выбрать категорию", "take_category_goods"),
+                    ],
+                    [
+                        Markup.button.callback("💬 Поиск товара", "find_good"),
+                    ],
+                ]
+            ));
+        });
+
         this.bot.action("take_all_goods", (ctx) => {
-
             console.log("Получить список товаров")
-            ctx.reply("Получить список товаров")
-
             take_all_goods(ctx);
-
-            
-        })
+        });
 
         this.bot.action("take_extract", (ctx) => {
             console.log("Выписка дохода")
